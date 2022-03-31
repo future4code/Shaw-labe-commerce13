@@ -1,0 +1,43 @@
+[
+    {
+    "id": "Date.now()",
+    "name": "Camiseta NASA Preta",
+    "img": "https://images2.imgbox.com/d1/e5/kF02pWQQ_o.jpg",
+    "price": "R$150,00"
+  },
+
+  {
+    "id": "Date.now()",
+    "name": "Camiseta NASA Branca",
+    "img": "https://images2.imgbox.com/03/70/oX7P2WyD_o.jpg",
+    "price": "R$180,00"
+  },
+
+  {
+    "id": "Date.now()",
+    "name": "Camiseta Gato Astronauta",
+    "img": "https://images2.imgbox.com/1d/e4/dqrUoqDq_o.jpg",
+    "price": "R$250,00"
+  },
+
+  {
+    "id": "Date.now()",
+    "name": "Camiseta Planetas",
+    "img": "https://images2.imgbox.com/5a/be/IySszcVy_o.jpg",
+    "price": "R$200,00"
+  },
+
+  {
+    "id": "Date.now()",
+    "name": "Camiseta I need Space",
+    "img": "https://images2.imgbox.com/af/e2/ABdnZE87_o.jpg",
+    "price": "R$50,00"
+  },
+
+  {
+    "id": "Date.now()",
+    "name": "Camiseta Alien",
+    "img": "https://images2.imgbox.com/1e/9a/x6I45BAP_o.jpg",
+    "price": "R$300,00"
+  }
+]
