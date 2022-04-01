@@ -14,9 +14,9 @@ export default class Filtros extends React.Component{
         return(
             <FiltrosContainer>
                 <h3>Filtros</h3>
-                <label>Valor Minimo: <input type="number" value="100"></input></label>
-                <label>Valor Maximo: <input type="number" value="1000"></input></label>
-                <label>Busca por nome: <input type="text"></input></label>
+                <label>Valor Minimo: <input type="number" value={this.props.minFilter} onChange={this.props.onChangeMinFilter}></input></label>
+                <label>Valor Maximo: <input type="number" value={this.props.maxFilter} onChange={this.props.onChangeMaxFilter}></input></label>
+                <label>Busca por nome: <input type="text" value={this.props.nameFilter} onChange={this.props.onChangeNameFilter}></input></label>
             </FiltrosContainer>
         )
     }
