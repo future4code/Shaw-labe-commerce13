@@ -13,7 +13,7 @@ const MainContainer = styled.div`
   min-height: 100vh;
 `
 const products = [
-  {
+    {
       id: 1,
       name: 'Camiseta NASA Preta',
       img: 'https://images2.imgbox.com/d1/e5/kF02pWQQ_o.jpg',
@@ -76,6 +76,40 @@ class App extends React.Component{
     this.setState({nameFilter: event.target.value})
   }
 
+  onAddProductToCart = (productId) => {
+    const productsInCart = this.state.productsInCart.find(product => productId === product.id)
+      if(productsInCart){
+        const newProductsInCart = this.state.productsInCart.map(product => {
+          if(productId === product.id) {
+            return {
+              ...product,
+              quantity : product.quantity + 1
+            }
+          }
+          return product
+        })
+        this.setState({productsInCart: newProductsInCart})
+      } else{
+        const productToAdd = products.find(product => productId === product.id)
+
+        const newProductsInCart = [...this.state.productsInCart, {...productToAdd, quantity: 1}]
+        this.setState({productsInCart: newProductsInCart})
+      }
+  }
+
+  onRemoveProductFromCart = (productId) => {
+    const newProductsInCart = this.state.productsInCart.map((product) => {
+      if(product.id === productId) {
+        return {
+          ...product,
+          quantity: product.quantity - 1
+        }
+      }
+        return product
+    }).filter((product) => product.quantity > 0)
+
+    this.setState({productsInCart: newProductsInCart})
+  }
 
   render(){
     return (
@@ -87,14 +121,18 @@ class App extends React.Component{
         onChangeMinFilter = {this.onChangeMinFilter}
         onChangeMaxFilter = {this.onChangeMaxFilter}
         onChangeNameFilter = {this.onChangeNameFilter}
-        ></Filtros>
+        />
         <Produtos
         minFilter = {this.state.minFilter}
         maxFilter = {this.state.maxFilter}
         nameFilter = {this.state.nameFilter}
         products = {products}
-        ></Produtos>
-        <Carrinho></Carrinho>
+        onAddProductToCart = {this.onAddProductToCart}
+        />
+        <Carrinho
+        productsInCart = {this.state.productsInCart}
+        onRemoveProductFromCart = {this.onRemoveProductFromCart}
+        />
       </MainContainer>
     
     );}

@@ -26,7 +26,7 @@ class Cards extends React.Component{
                 <img src={this.props.product.img}/>
                 <p>{this.props.product.name}</p>
                 <p>R$: {this.props.product.price},00</p>
-                <button>Adicionar ao carrinho</button>
+                <button onClick={() => this.props.onAddProductToCart(this.props.product.id)}>Adicionar ao carrinho</button>
             </Card>
         )
     }

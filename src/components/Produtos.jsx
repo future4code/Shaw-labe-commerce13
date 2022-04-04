@@ -55,7 +55,7 @@ const CardsContainer = styled.section`
       <MainProdutos>
         <ProdutosTOP>
           <p>Quantidade de produtos: {filteredAndOrderedList.length}</p>
-          <label>Ordenar por:
+          <label>Ordenar por: 
             <select value={this.state.sort} onChange={this.onChangeSort}>
               <option value="CRESCENTE" selected >Crescente</option>
               <option value="DECRESCENTE">Decrescente</option>
@@ -64,7 +64,9 @@ const CardsContainer = styled.section`
         </ProdutosTOP>
         <CardsContainer>
           {filteredAndOrderedList.map((product) =>{
-            return <Cards product={product}/>
+            return <Cards product={product}
+                          onAddProductToCart = {this.props.onAddProductToCart}
+                    />
           })}
         </CardsContainer>  
       </MainProdutos>

@@ -7,6 +7,10 @@ const FiltrosContainer = styled.div`
   flex-direction: column;
   background-color: gray;
   width: 22%;
+  padding: 0.5%;
+    input{
+        max-width: 150px;
+    }
 `
 
 export default class Filtros extends React.Component{
